@@ -27,8 +27,8 @@ def inspect_ws(**kwargs):
                            data=wsdata).json()
 #    pdb.set_trace()
     courses = [ {'#MDLCOURSENAME': course['shortname'], 
-                '#MDLCOURSEID': course['id'] } for course in result ]
-
+                 '#MDLCOURSEID': course['id'],
+                 } for course in result ]
     
     print(json.dumps({'data': courses}))
 

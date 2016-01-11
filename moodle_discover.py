@@ -29,7 +29,8 @@ def inspect_ws(**kwargs):
 
     
     print(json.dumps({'data': {'#MDLNAME': result['sitename'], 
-                               '#MDLURL': result['siteurl']}}))
+                               '#MDLURL': result['siteurl'],
+                               '#MDLTOKEN': token}}))
 
 
 if __name__ == '__main__':

@@ -9,7 +9,6 @@ import pdb
 def get_nested_elements(info, elements):
     # Function to traverse dictionaries and print when value is 
     # not a dict (instead it's a str)
-#    pdb.set_trace()
     if isinstance(elements, str):
         keys = elements.split('.')
 
@@ -52,10 +51,10 @@ def inspect_ws(**kwargs):
     result = requests.post(url=prefix+server+'/webservice/rest/server.php',
                            data=wsdata).json()
 
-    if isinstance(result, dict) and result.has_key('errorcode'):
+    if isinstance(result, dict) and not result.has_key('errorcode'):
        get_nested_elements(result, function)
     elif isinstance(result, str) or isinstance(result, int):
-       return(result)
+       print(result)
     elif isinstance(result,list):
        for value in result:
            get_nested_elements(value, function)

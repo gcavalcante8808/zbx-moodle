@@ -5,7 +5,6 @@
 import requests
 import argparse
 import json
-import pdb
 
 def inspect_ws(**kwargs):
     # Get Params and try to pick a result from the server.

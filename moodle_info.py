@@ -51,7 +51,7 @@ def inspect_ws(**kwargs):
     result = requests.post(url=prefix+server+'/webservice/rest/server.php',
                            data=wsdata).json()
 
-    if isinstance(result, dict) and not result.has_key('errorcode'):
+    if isinstance(result, dict) and 'errorcode' not in result.keys():
        get_nested_elements(result, function)
     elif isinstance(result, str) or isinstance(result, int):
        print(result)

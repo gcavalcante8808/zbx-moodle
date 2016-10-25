@@ -27,13 +27,10 @@ Installation
 
 To install this solution you'll need to do the following steps:
 
-1. Clone the repository into a folder (using git clone command);
-2. Copy 'docker.conf' into your zabbix agent configuration directory (/etc/zabbix/zabbix.conf.d/ if using official packages from zabbix sia);
-3. Create a '/data' directory;
-4. Copy 'moodle_discover.py' to '/data';
-5. Copy 'mdl_course_discovery.py' to '/data';
-6. Import Zabbix Template you Zabbix Server;
-7. Link the template against the hosts that have moodle running.
+1. Use the command: ```cd /usr/local/src && git clone https://github.com/gcavalcante8808/zbx-moodle.git";
+2. Include the moodle.conf file (Which have the userParameters used by the agent) into your zabbix_agentd "Include" clause;
+3. Import Zabbix Template you Zabbix Server;
+4. Link the template against the hosts that have moodle running.
 
 Testing the solution
 --------------------
